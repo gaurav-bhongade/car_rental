@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Premium Car Rental • Drive your journey{% endblock %}</title>
+    <!-- Bootstrap 5 + Icons + refined professional theme -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    {% load static %}
+    <!-- Custom styles: elegant, automotive, trustworthy -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        /* Additional fine-tuning for premium feel – seamlessly integrated with your existing style */
+        :root {
+            --primary-deep: #0a2b4f;
+            --accent-gold: #c9a23d;
+            --gray-soft: #f4f7fc;
+        }
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background-color: #ffffff;
+            color: #1e2b37;
+        }
+        /* refined navbar */
+        .navbar {
+            background: rgba(10, 20, 30, 0.95) !important;
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            padding: 1rem 0;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+        }
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            background: linear-gradient(120deg, #fff, #e0e9ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .navbar-nav .nav-link {
+            color: rgba(255,255,255,0.85) !important;
+            margin: 0 0.2rem;
+            padding: 0.5rem 1rem !important;
+            border-radius: 40px;
+            transition: 0.25s;
+        }
+        .navbar-nav .nav-link:hover {
+            background: rgba(255,255,255,0.12);
+            color: white !important;
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: linear-gradient(145deg, #c9a23d, #a07e2e);
+            border: none;
+            border-radius: 40px;
+            padding: 14px 42px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: #0b1a2a;
+            box-shadow: 0 10px 20px -8px rgba(201,162,61,0.4);
+            transition: all 0.25s ease;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(145deg, #dbb45c, #b6923b);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 22px 28px -12px rgba(201,162,61,0.6);
+            color: #03080f;
+        }
+        .btn-outline-light {
+            border-radius: 40px;
+            padding: 14px 36px;
+            font-weight: 600;
+            border-width: 2px;
+        }
+        /* feature cards – elegant lift */
+        .card {
+            border: none;
+            border-radius: 28px;
+            background: #ffffff;
+            box-shadow: 0 15px 35px -10px rgba(0,20,30,0.1);
+            transition: all 0.35s cubic-bezier(0.05,0.6,0.2,1);
+        }
+        .card:hover {
+            transform: translateY(-16px) scale(1.02);
+            box-shadow: 0 30px 50px -12px rgba(0,45,70,0.25);
+        }
+        .feature-icon-lg {
+            font-size: 3.2rem;
+            color: var(--accent-gold);
+            transition: 0.2s;
+        }
+        .card:hover .feature-icon-lg {
+            color: #0a2b4f;
+        }
+        /* footer more premium */
+        footer {
+            background: #0f212f;
+            border-top: 1px solid rgba(255,215,140,0.1);
+            font-weight: 300;
+        }
+        footer h5 {
+            color: #ffd893;
+            letter-spacing: 0.03em;
+            font-weight: 600;
+        }
+        footer a {
+            color: #b0c6d4;
+            transition: 0.2s;
+            text-decoration: none;
+        }
+        footer a:hover {
+            color: #e2b96b;
+            padding-left: 5px;
+        }
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+            transition: 0.2s;
+            margin-right: 8px;
+        }
+        .social-icon:hover {
+            background: #c9a23d;
+            color: #0f1f2b !important;
+            transform: scale(1.12);
+        }
+        /* section title */
+        .section-title {
+            font-size: 2.6rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 90px;
+            height: 4px;
+            background: linear-gradient(90deg, #c9a23d, #ffd166);
+            border-radius: 4px;
+        }
+        .bg-soft {
+            background-color: var(--gray-soft);
+        }
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.7s ease;
+        }
+        .animate-on-scroll.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- premium navigation with refined dark gradient -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'index' %}">
+                <i class="bi bi-car-front-fill me-2" style="color: #c9a23d;"></i>Prestige<span style="color: #c9a23d;">Drive</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'index' %}"><i class="bi bi-house-door me-1"></i>Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'cars_list' %}"><i class="bi bi-grid-3x3-gap-fill me-1"></i>Fleet</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'services' %}"><i class="bi bi-gear-wide-connected me-1"></i>Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'team' %}"><i class="bi bi-people-fill me-1"></i>Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'testimonials' %}"><i class="bi bi-chat-quote-fill me-1"></i>Stories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'blog_list' %}"><i class="bi bi-pencil-square me-1"></i>Journal</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'about' %}"><i class="bi bi-info-circle-fill me-1"></i>About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}"><i class="bi bi-envelope-fill me-1"></i>Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- main content area (hero will be inside block on child pages, but we can optionally embed a default hero) -->
+    <main>
+
+
+        {% block content %}
+        <!-- professional demo content: features / highlights (only visible if no overrides) -->
+        <div class="container section-padding" style="padding: 80px 0;">
+            <div class="text-center mb-5">
+                <h2 class="section-title">why choose prestige drive</h2>
+                <p class="text-secondary-emphasis fs-5">Uncompromising quality, curated service, and exceptional vehicles</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card p-4 h-100 border-0">
+                        <div class="card-body text-center">
+                            <i class="fa-solid fa-gem feature-icon-lg mb-4"></i>
+                            <h4 class="fw-bold mb-3">Luxury fleet</h4>
+                            <p class="text-secondary">From executive sedans to exotic supercars, every vehicle is immaculate and less than 2 years old.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-4 h-100 border-0">
+                        <div class="card-body text-center">
+                            <i class="fa-solid fa-headset feature-icon-lg mb-4"></i>
+                            <h4 class="fw-bold mb-3">concierge support</h4>
+                            <p class="text-secondary">24/7 dedicated assistance, delivery to your door, and flexible return options.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-4 h-100 border-0">
+                        <div class="card-body text-center">
+                            <i class="fa-solid fa-shield-halved feature-icon-lg mb-4"></i>
+                            <h4 class="fw-bold mb-3">secure & insured</h4>
+                            <p class="text-secondary">Full coverage, roadside assistance, and zero deposit for members.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- subtle callout / stats -->
+        <div class="bg-soft py-5">
+            <div class="container text-center">
+                <div class="row justify-content-center">
+                    <div class="col-md-3 col-6 my-3">
+                        <div class="display-3 fw-bold text-primary">150+</div>
+                        <span class="text-secondary">premium vehicles</span>
+                    </div>
+                    <div class="col-md-3 col-6 my-3">
+                        <div class="display-3 fw-bold text-primary">12k</div>
+                        <span class="text-secondary">happy clients</span>
+                    </div>
+                    <div class="col-md-3 col-6 my-3">
+                        <div class="display-3 fw-bold text-primary">98%</div>
+                        <span class="text-secondary">repeat bookings</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+    </main>
+
+    <!-- elevated footer with newsletter & social depth -->
+    <footer class="pt-5 pb-4 mt-5">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-4">
+                    <a class="navbar-brand fs-2 text-white" href="{% url 'index' %}"><i class="bi bi-car-front-fill me-1" style="color:#c9a23d;"></i>Prestige<span style="color:#c9a23d;">Drive</span></a>
+                    <p class="text-secondary-light mt-3" style="color:#9eb0c0 !important;">Experience the road with elegance. Your journey, our passion.</p>
+                    <div class="mt-4">
+                        <a href="#" class="social-icon text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon text-white"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" class="social-icon text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="fw-semibold">Explore</h5>
+                    <ul class="list-unstyled mt-3">
+                        <li class="mb-2"><a href="{% url 'index' %}" class="text-secondary-light"><i class="bi bi-chevron-right me-1 small"></i>Home</a></li>
+                        <li class="mb-2"><a href="{% url 'cars_list' %}" class="text-secondary-light"><i class="bi bi-chevron-right me-1 small"></i>Cars</a></li>
+                        <li class="mb-2"><a href="{% url 'services' %}" class="text-secondary-light"><i class="bi bi-chevron-right me-1 small"></i>Services</a></li>
+                        <li class="mb-2"><a href="{% url 'team' %}" class="text-secondary-light"><i class="bi bi-chevron-right me-1 small"></i>Team</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="fw-semibold">Connect</h5>
+                    <ul class="list-unstyled mt-3">
+                        <li class="mb-2"><a href="{% url 'testimonials' %}" class="text-secondary-light"><i class="bi bi-chevron-right me-1 small"></i>Testimonials</a></li>
+                        <li class="mb-2"><a href="{% url 'blog_list' %}" class="text-secondary-light"><i class="bi bi-chevron-right me-1 small"></i>Blog</a></li>
+                        <li class="mb-2"><a href="{% url 'about' %}" class="text-secondary-light"><i class="bi bi-chevron-right me-1 small"></i>About us</a></li>
+                        <li class="mb-2"><a href="{% url 'contact' %}" class="text-secondary-light"><i class="bi bi-chevron-right me-1 small"></i>Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h5 class="fw-semibold">Subscribe to drive updates</h5>
+                    <p class="text-secondary-light small">Be the first to know about new arrivals and exclusive offers.</p>
+                    <form class="mt-3">
+                        <div class="input-group">
+                            <input type="email" class="form-control bg-transparent text-white border-secondary" placeholder="Your email" aria-label="Subscribe">
+                            <button class="btn btn-outline-warning border-2" type="button" style="color:#c9a23d; border-color:#c9a23d;">Join</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="border-secondary mt-4 mb-3 opacity-25">
+            <div class="row align-items-center">
+                <div class="col-md-6 small text-secondary-light">© 2026 PrestigeDrive — timeless mobility. All rights reserved.</div>
+                <div class="col-md-6 text-md-end small">
+                    <a href="#" class="text-secondary-light me-3">Privacy</a>
+                    <a href="#" class="text-secondary-light me-3">Terms</a>
+                    <a href="#" class="text-secondary-light">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    {% load static %}
+    <script src="{% static 'js/script.js' %}"></script>
+    <script>
+        (function() {
+            // simple animate on scroll (if you already have animation class)
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('animate');
+                });
+            }, {threshold: 0.15});
+            animatedElements.forEach(el => observer.observe(el));
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,457 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact Us - PrestigeDrive{% endblock %}
+
+{% block content %}
+<!-- Page Header - Elegant and welcoming -->
+<section class="page-header position-relative overflow-hidden" style="background: linear-gradient(135deg, #0a2b4f 0%, #1b4b64 100%); padding: 80px 0 60px;">
+    <div class="position-absolute top-0 start-0 w-100 h-100 opacity-10">
+        <div class="position-absolute w-100 h-100" style="background: url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1920&q=80') center/cover; opacity: 0.1;"></div>
+        <div class="position-absolute" style="top: 20%; right: 10%; width: 300px; height: 300px; background: rgba(201,162,61,0.1); border-radius: 50%; filter: blur(80px); animation: float 15s infinite;"></div>
+        <div class="position-absolute" style="bottom: 10%; left: 5%; width: 250px; height: 250px; background: rgba(201,162,61,0.08); border-radius: 50%; filter: blur(70px); animation: float 20s infinite reverse;"></div>
+    </div>
+    
+    <div class="container position-relative z-1">
+        <div class="row align-items-center">
+            <div class="col-lg-8 mx-auto text-center text-white">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center mb-3">
+                        <li class="breadcrumb-item"><a href="{% url 'index' %}" class="text-white-50">Home</a></li>
+                        <li class="breadcrumb-item active text-white" aria-current="page">Contact Us</li>
+                    </ol>
+                </nav>
+                <h1 class="display-4 fw-bold mb-3" data-aos="fade-up">Get In Touch</h1>
+                <p class="lead mb-0 opacity-75" style="max-width: 700px; margin: 0 auto;" data-aos="fade-up" data-aos-delay="100">
+                    We're here to assist you 24/7. Reach out with any questions or booking needs.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Information Cards -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4" data-aos="fade-up">
+                <div class="card h-100 border-0 shadow-sm text-center p-4" style="border-radius: 40px; transition: all 0.3s ease;">
+                    <div class="rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center" 
+                         style="width: 100px; height: 100px; background: #e9dec5;">
+                        <i class="bi bi-telephone-fill fs-1" style="color: #c9a23d;"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3" style="color: #0a2b4f;">Phone</h4>
+                    <p class="text-secondary mb-2">Available 24/7 for emergencies</p>
+                    <p class="fw-bold" style="color: #c9a23d; font-size: 1.2rem;">+1 (888) 555-0123</p>
+                    <p class="small text-secondary mt-3">Emergency roadside assistance</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100 border-0 shadow-sm text-center p-4" style="border-radius: 40px; transition: all 0.3s ease;">
+                    <div class="rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center" 
+                         style="width: 100px; height: 100px; background: #e9dec5;">
+                        <i class="bi bi-envelope-fill fs-1" style="color: #c9a23d;"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3" style="color: #0a2b4f;">Email</h4>
+                    <p class="text-secondary mb-2">General inquiries & bookings</p>
+                    <p class="fw-bold" style="color: #c9a23d; font-size: 1.2rem;">info@prestigedrive.com</p>
+                    <p class="small text-secondary mt-3">Support: support@prestigedrive.com</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100 border-0 shadow-sm text-center p-4" style="border-radius: 40px; transition: all 0.3s ease;">
+                    <div class="rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center" 
+                         style="width: 100px; height: 100px; background: #e9dec5;">
+                        <i class="bi bi-geo-alt-fill fs-1" style="color: #c9a23d;"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3" style="color: #0a2b4f;">Visit Us</h4>
+                    <p class="text-secondary mb-2">Headquarters</p>
+                    <p class="fw-bold" style="color: #0a2b4f;">123 Luxury Lane<br>Beverly Hills, CA 90210</p>
+                    <p class="small text-secondary mt-3">Mon-Fri: 9am - 7pm</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Form & Map Section -->
+<section class="py-5 bg-light" style="background: #f4f7fc !important;">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Contact Form -->
+            <div class="col-lg-6" data-aos="fade-right">
+                <div class="card border-0 shadow-lg" style="border-radius: 40px; overflow: hidden;">
+                    <div class="card-body p-5">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="rounded-circle p-3 me-3" style="background: #e9dec5;">
+                                <i class="bi bi-chat-dots-fill fs-3" style="color: #c9a23d;"></i>
+                            </div>
+                            <div>
+                                <h3 class="fw-bold mb-1" style="color: #0a2b4f;">Send Us a Message</h3>
+                                <p class="text-secondary mb-0">We'll respond within 24 hours</p>
+                            </div>
+                        </div>
+                        
+                        {% if messages %}
+                            {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }} alert-dismissible fade show rounded-pill" role="alert" 
+                                 style="border: none; background: {% if message.tags == 'success' %}#e9dec5{% else %}#f8d7da{% endif %};">
+                                <i class="bi {% if message.tags == 'success' %}bi-check-circle-fill{% else %}bi-exclamation-triangle-fill{% endif %} me-2" 
+                                   style="color: {% if message.tags == 'success' %}#c9a23d{% else %}#dc3545{% endif %};"></i>
+                                {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                            {% endfor %}
+                        {% endif %}
+                        
+                        <form method="post" class="needs-validation" novalidate>
+                            {% csrf_token %}
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <label for="name" class="form-label fw-semibold text-secondary">
+                                        <i class="bi bi-person-fill me-1" style="color: #c9a23d;"></i>Full Name
+                                    </label>
+                                    <input type="text" class="form-control form-control-lg rounded-pill border-0 bg-light" 
+                                           id="name" name="name" placeholder="John Doe" required>
+                                    <div class="invalid-feedback">Please enter your name.</div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label fw-semibold text-secondary">
+                                        <i class="bi bi-envelope-fill me-1" style="color: #c9a23d;"></i>Email Address
+                                    </label>
+                                    <input type="email" class="form-control form-control-lg rounded-pill border-0 bg-light" 
+                                           id="email" name="email" placeholder="john@example.com" required>
+                                    <div class="invalid-feedback">Please enter a valid email.</div>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <label for="subject" class="form-label fw-semibold text-secondary">
+                                        <i class="bi bi-tag-fill me-1" style="color: #c9a23d;"></i>Subject
+                                    </label>
+                                    <input type="text" class="form-control form-control-lg rounded-pill border-0 bg-light" 
+                                           id="subject" name="subject" placeholder="How can we help?" required>
+                                    <div class="invalid-feedback">Please enter a subject.</div>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <label for="message" class="form-label fw-semibold text-secondary">
+                                        <i class="bi bi-chat-text-fill me-1" style="color: #c9a23d;"></i>Message
+                                    </label>
+                                    <textarea class="form-control border-0 bg-light" id="message" name="message" 
+                                              rows="5" placeholder="Your message here..." style="border-radius: 30px;" required></textarea>
+                                    <div class="invalid-feedback">Please enter your message.</div>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary w-100 rounded-pill py-3 fw-bold" 
+                                            style="background: #c9a23d; border: none; color: #0a2b4f; font-size: 1.1rem;">
+                                        <i class="bi bi-send-fill me-2"></i>Send Message
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Map & Additional Info -->
+            <div class="col-lg-6" data-aos="fade-left">
+                <!-- Map Card -->
+                <div class="card border-0 shadow-lg mb-4" style="border-radius: 40px; overflow: hidden;">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="rounded-circle p-2 me-2" style="background: #e9dec5;">
+                                <i class="bi bi-map-fill" style="color: #c9a23d;"></i>
+                            </div>
+                            <h5 class="fw-bold mb-0" style="color: #0a2b4f;">Our Location</h5>
+                        </div>
+                        <div class="map-container" style="height: 300px; border-radius: 30px; overflow: hidden;">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.079285436097!2d-118.400423684781!3d34.073535580602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bc04c6f6b1b7%3A0x8e7d3c7c8c8c8c8c!2sBeverly%20Hills%2C%20CA%2090210!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" 
+                                width="100%" 
+                                height="100%" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Business Hours -->
+                <div class="card border-0 shadow-lg" style="border-radius: 40px; overflow: hidden;">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="rounded-circle p-2 me-2" style="background: #e9dec5;">
+                                <i class="bi bi-clock-fill" style="color: #c9a23d;"></i>
+                            </div>
+                            <h5 class="fw-bold mb-0" style="color: #0a2b4f;">Business Hours</h5>
+                        </div>
+                        
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <div class="d-flex justify-content-between">
+                                    <span class="text-secondary">Monday - Friday</span>
+                                    <span class="fw-bold" style="color: #0a2b4f;">9am - 7pm</span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex justify-content-between">
+                                    <span class="text-secondary">Saturday</span>
+                                    <span class="fw-bold" style="color: #0a2b4f;">10am - 5pm</span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex justify-content-between">
+                                    <span class="text-secondary">Sunday</span>
+                                    <span class="fw-bold" style="color: #0a2b4f;">Closed</span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex justify-content-between">
+                                    <span class="text-secondary">24/7 Support</span>
+                                    <span class="fw-bold" style="color: #c9a23d;">Emergency</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <hr class="my-4">
+                        
+                        <!-- Social Media -->
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fw-semibold text-secondary">Follow us:</span>
+                            <div>
+                                <a href="#" class="btn btn-outline-primary rounded-circle me-2" 
+                                   style="border-color: #c9a23d; color: #0a2b4f; width: 45px; height: 45px; padding: 0; display: inline-flex; align-items: center; justify-content: center;">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="btn btn-outline-primary rounded-circle me-2" 
+                                   style="border-color: #c9a23d; color: #0a2b4f; width: 45px; height: 45px; padding: 0; display: inline-flex; align-items: center; justify-content: center;">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="btn btn-outline-primary rounded-circle me-2" 
+                                   style="border-color: #c9a23d; color: #0a2b4f; width: 45px; height: 45px; padding: 0; display: inline-flex; align-items: center; justify-content: center;">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="btn btn-outline-primary rounded-circle" 
+                                   style="border-color: #c9a23d; color: #0a2b4f; width: 45px; height: 45px; padding: 0; display: inline-flex; align-items: center; justify-content: center;">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="badge px-4 py-2 mb-3" style="background: #e9dec5; color: #0a2b4f; border-radius: 40px;">
+                <i class="bi bi-question-circle-fill me-2" style="color: #c9a23d;"></i>FAQ
+            </span>
+            <h2 class="display-5 fw-bold" style="color: #0a2b4f;">Frequently Asked Questions</h2>
+            <p class="lead text-secondary">Quick answers to common inquiries</p>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item border-0 mb-3 shadow-sm" style="border-radius: 20px; overflow: hidden;">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" 
+                                    style="color: #0a2b4f; background: white; border-radius: 20px;">
+                                <i class="bi bi-question-circle-fill me-2" style="color: #c9a23d;"></i>
+                                How do I make a reservation?
+                            </button>
+                        </h3>
+                        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-secondary">
+                                You can make a reservation through our website by browsing our fleet, selecting your preferred vehicle, and completing the booking process. You can also call us directly for assistance.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item border-0 mb-3 shadow-sm" style="border-radius: 20px; overflow: hidden;">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2"
+                                    style="color: #0a2b4f; background: white;">
+                                <i class="bi bi-question-circle-fill me-2" style="color: #c9a23d;"></i>
+                                What payment methods do you accept?
+                            </button>
+                        </h3>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-secondary">
+                                We accept all major credit cards (Visa, MasterCard, American Express), debit cards, and PayPal. A security deposit is required at pickup.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item border-0 mb-3 shadow-sm" style="border-radius: 20px; overflow: hidden;">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3"
+                                    style="color: #0a2b4f; background: white;">
+                                <i class="bi bi-question-circle-fill me-2" style="color: #c9a23d;"></i>
+                                Can I modify or cancel my booking?
+                            </button>
+                        </h3>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-secondary">
+                                Yes, you can modify or cancel your booking up to 24 hours before pickup without any fees. Late cancellations may incur charges.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5" style="background: linear-gradient(145deg, #0a2b4f, #1b4b64);">
+    <div class="container text-center text-white">
+        <h2 class="display-5 fw-bold mb-3">Prefer to Call?</h2>
+        <p class="lead mb-4 opacity-75">Our team is available 24/7 to assist you with any questions.</p>
+        <div class="d-flex justify-content-center gap-4 flex-wrap">
+            <a href="tel:+18885550123" class="btn btn-primary btn-lg px-5 py-3 rounded-pill" 
+               style="background: #c9a23d; color: #0a2b4f; font-weight: 700;">
+                <i class="bi bi-telephone-fill me-2"></i>Call Us Now
+            </a>
+            <a href="{% url 'cars_list' %}" class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill" style="border-width: 2px;">
+                <i class="bi bi-car-front me-2"></i>Browse Cars
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Custom CSS -->
+<style>
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+    }
+    
+    .page-header {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    /* Card hover effects */
+    .card {
+        transition: all 0.3s ease;
+    }
+    
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 30px 50px -20px rgba(10, 43, 79, 0.2) !important;
+    }
+    
+    .card:hover .rounded-circle {
+        transform: scale(1.1);
+        transition: transform 0.3s ease;
+    }
+    
+    /* Form styling */
+    .form-control:focus {
+        box-shadow: 0 0 0 3px rgba(201,162,61,0.3);
+        border-color: #c9a23d;
+    }
+    
+    .form-control-lg {
+        padding: 1rem 1.5rem;
+    }
+    
+    /* Map container */
+    .map-container {
+        transition: all 0.3s ease;
+    }
+    
+    .map-container:hover {
+        opacity: 0.9;
+    }
+    
+    /* Social media buttons */
+    .btn-outline-primary:hover {
+        background: #c9a23d !important;
+        border-color: #c9a23d !important;
+        color: #0a2b4f !important;
+        transform: scale(1.1);
+    }
+    
+    /* Breadcrumb styling */
+    .breadcrumb-item + .breadcrumb-item::before {
+        color: rgba(255,255,255,0.5);
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .page-header {
+            padding: 60px 0 40px;
+        }
+        
+        .display-4 {
+            font-size: 2.2rem;
+        }
+        
+        .card:hover {
+            transform: translateY(-3px);
+        }
+    }
+    
+    /* Alert animations */
+    .alert {
+        animation: slideDown 0.5s ease;
+    }
+    
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* Form validation styling */
+    .was-validated .form-control:invalid:focus {
+        box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.3);
+    }
+    
+    .was-validated .form-control:valid:focus {
+        box-shadow: 0 0 0 3px rgba(201,162,61,0.3);
+    }
+</style>
+
+<!-- AOS Animation Script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50
+        });
+        
+        // Form validation
+        const forms = document.querySelectorAll('.needs-validation');
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,395 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Our Premium Services{% endblock %}
+
+{% block content %}
+<!-- Page Header - Professional and elegant -->
+<section class="page-header position-relative overflow-hidden" style="background: linear-gradient(135deg, #0a2b4f 0%, #1b4b64 100%); padding: 80px 0 60px;">
+    <div class="position-absolute top-0 start-0 w-100 h-100 opacity-10">
+        <div class="position-absolute w-100 h-100" style="background: url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1920&q=80') center/cover; opacity: 0.1;"></div>
+        <div class="position-absolute" style="top: 10%; right: 5%; width: 300px; height: 300px; background: rgba(201,162,61,0.1); border-radius: 50%; filter: blur(80px); animation: float 15s infinite;"></div>
+        <div class="position-absolute" style="bottom: 10%; left: 5%; width: 250px; height: 250px; background: rgba(201,162,61,0.08); border-radius: 50%; filter: blur(70px); animation: float 20s infinite reverse;"></div>
+    </div>
+    
+    <div class="container position-relative z-1">
+        <div class="row align-items-center">
+            <div class="col-lg-8 mx-auto text-center text-white">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center mb-3">
+                        <li class="breadcrumb-item"><a href="{% url 'index' %}" class="text-white-50">Home</a></li>
+                        <li class="breadcrumb-item active text-white" aria-current="page">Services</li>
+                    </ol>
+                </nav>
+                <h1 class="display-4 fw-bold mb-3" data-aos="fade-up">Our Premium Services</h1>
+                <p class="lead mb-0 opacity-75" style="max-width: 700px; margin: 0 auto;" data-aos="fade-up" data-aos-delay="100">
+                    Experience unparalleled luxury with our comprehensive range of car rental services tailored to your every need
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Introduction -->
+<section class="py-5 bg-light" style="background: #f4f7fc !important;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <span class="badge px-4 py-2 mb-3" style="background: #e9dec5; color: #0a2b4f; border-radius: 40px;">
+                    <i class="bi bi-star-fill me-2" style="color: #c9a23d;"></i>WHAT WE OFFER
+                </span>
+                <h2 class="display-5 fw-bold mb-3" style="color: #0a2b4f;">Services Crafted for Discerning Clients</h2>
+                <p class="lead text-secondary">From luxury fleet rentals to concierge services, we provide everything you need for an exceptional driving experience.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Services Section -->
+<section class="py-5">
+    <div class="container">
+        <!-- Service Categories -->
+        <div class="row g-4">
+            {% for service in services %}
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="{{ forloop.counter|add:'100' }}">
+                <div class="card h-100 border-0 shadow-sm service-card" style="border-radius: 40px; overflow: hidden; transition: all 0.3s ease;">
+                    <!-- Card Header with Icon -->
+                    <div class="card-header border-0 bg-transparent pt-4 pb-0">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="service-icon-wrapper rounded-circle d-flex align-items-center justify-content-center" 
+                                 style="width: 80px; height: 80px; background: linear-gradient(135deg, #e9dec5, #d4c39e);">
+                                <i class="{{ service.icon|default:'bi bi-car-front' }} fs-1" style="color: #c9a23d;"></i>
+                            </div>
+                            <span class="service-number fw-bold" style="color: rgba(201,162,61,0.2); font-size: 4rem; line-height: 1;">{{ forloop.counter|stringformat:"02d" }}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card-body p-4">
+                        <h4 class="fw-bold mb-3" style="color: #0a2b4f;">{{ service.title }}</h4>
+                        <p class="text-secondary mb-4">{{ service.description }}</p>
+                        
+                        <!-- Service Features (can be customized based on service) -->
+                        <div class="service-features mb-4">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-check-circle-fill me-2" style="color: #c9a23d; font-size: 0.9rem;"></i>
+                                <span class="small text-secondary">24/7 Availability</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-check-circle-fill me-2" style="color: #c9a23d; font-size: 0.9rem;"></i>
+                                <span class="small text-secondary">Professional Service</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-check-circle-fill me-2" style="color: #c9a23d; font-size: 0.9rem;"></i>
+                                <span class="small text-secondary">100% Satisfaction</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#contact" class="btn btn-outline-primary rounded-pill w-100 py-2" 
+                           style="border-color: #c9a23d; color: #0a2b4f; border-width: 2px;">
+                            <span>Inquire Now</span>
+                            <i class="bi bi-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12 text-center py-5">
+                <div class="rounded-circle bg-light d-inline-flex p-5 mb-4">
+                    <i class="bi bi-tools fs-1" style="color: #c9a23d;"></i>
+                </div>
+                <h3 class="fw-bold" style="color: #0a2b4f;">Services Coming Soon</h3>
+                <p class="text-secondary mb-4">We're preparing exceptional services for you</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Premium Service Highlights -->
+<section class="py-5" style="background: linear-gradient(135deg, #0a2b4f 0%, #1b4b64 100%);">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 text-white mb-4 mb-lg-0">
+                <span class="badge px-4 py-2 mb-3" style="background: #c9a23d; color: #0a2b4f; border-radius: 40px;">
+                    <i class="bi bi-diamond-fill me-2"></i>PREMIUM ADVANTAGE
+                </span>
+                <h2 class="display-5 fw-bold mb-3">The PrestigeDrive Experience</h2>
+                <p class="lead mb-4 opacity-75">Beyond just car rental – we offer a complete luxury mobility solution.</p>
+                
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0">
+                                <div class="rounded-circle p-3" style="background: rgba(201,162,61,0.15);">
+                                    <i class="bi bi-shield-check fs-4" style="color: #c9a23d;"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h5 class="fw-bold text-white">Fully Insured</h5>
+                                <p class="text-white-50 small">Comprehensive coverage for peace of mind</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0">
+                                <div class="rounded-circle p-3" style="background: rgba(201,162,61,0.15);">
+                                    <i class="bi bi-clock-history fs-4" style="color: #c9a23d;"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h5 class="fw-bold text-white">24/7 Support</h5>
+                                <p class="text-white-50 small">Round-the-clock assistance anywhere</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0">
+                                <div class="rounded-circle p-3" style="background: rgba(201,162,61,0.15);">
+                                    <i class="bi bi-truck fs-4" style="color: #c9a23d;"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h5 class="fw-bold text-white">Free Delivery</h5>
+                                <p class="text-white-50 small">Vehicle delivered to your doorstep</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0">
+                                <div class="rounded-circle p-3" style="background: rgba(201,162,61,0.15);">
+                                    <i class="bi bi-arrow-repeat fs-4" style="color: #c9a23d;"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h5 class="fw-bold text-white">Flexible Returns</h5>
+                                <p class="text-white-50 small">Free cancellation & flexible policies</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="position-relative">
+                    <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&h=600&fit=crop" 
+                         alt="Luxury service" 
+                         class="img-fluid rounded-4 shadow-xxl" 
+                         style="border-radius: 40px; border: 4px solid #c9a23d;">
+                    
+                    <!-- Experience Badge -->
+                    <div class="position-absolute bottom-0 end-0 mb-4 me-4">
+                        <div class="bg-white p-4 rounded-4 shadow-lg text-center" style="min-width: 150px;">
+                            <div class="display-4 fw-bold" style="color: #c9a23d;">10+</div>
+                            <div class="text-secondary">Years of Excellence</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Process Section -->
+<section class="py-5 bg-white">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="badge px-4 py-2 mb-3" style="background: #e9dec5; color: #0a2b4f; border-radius: 40px;">
+                <i class="bi bi-diagram-3 me-2" style="color: #c9a23d;"></i>SIMPLE PROCESS
+            </span>
+            <h2 class="display-5 fw-bold" style="color: #0a2b4f;">How It Works</h2>
+            <p class="lead text-secondary">Three simple steps to your perfect rental experience</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="text-center process-step">
+                    <div class="position-relative d-inline-block">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4" 
+                             style="width: 120px; height: 120px; background: linear-gradient(135deg, #e9dec5, #d4c39e);">
+                            <i class="bi bi-search fs-1" style="color: #c9a23d;"></i>
+                        </div>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill" 
+                              style="background: #c9a23d; color: #0a2b4f; width: 40px; height: 40px; font-size: 1.2rem; display: flex; align-items: center; justify-content: center;">1</span>
+                    </div>
+                    <h4 class="fw-bold mb-3" style="color: #0a2b4f;">Choose Your Car</h4>
+                    <p class="text-secondary">Browse our premium fleet and select the perfect vehicle for your journey</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center process-step">
+                    <div class="position-relative d-inline-block">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4" 
+                             style="width: 120px; height: 120px; background: linear-gradient(135deg, #e9dec5, #d4c39e);">
+                            <i class="bi bi-calendar-check fs-1" style="color: #c9a23d;"></i>
+                        </div>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill" 
+                              style="background: #c9a23d; color: #0a2b4f; width: 40px; height: 40px; font-size: 1.2rem; display: flex; align-items: center; justify-content: center;">2</span>
+                    </div>
+                    <h4 class="fw-bold mb-3" style="color: #0a2b4f;">Book & Pay</h4>
+                    <p class="text-secondary">Secure online booking with flexible payment options and instant confirmation</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center process-step">
+                    <div class="position-relative d-inline-block">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4" 
+                             style="width: 120px; height: 120px; background: linear-gradient(135deg, #e9dec5, #d4c39e);">
+                            <i class="bi bi-car-front fs-1" style="color: #c9a23d;"></i>
+                        </div>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill" 
+                              style="background: #c9a23d; color: #0a2b4f; width: 40px; height: 40px; font-size: 1.2rem; display: flex; align-items: center; justify-content: center;">3</span>
+                    </div>
+                    <h4 class="fw-bold mb-3" style="color: #0a2b4f;">Enjoy Your Drive</h4>
+                    <p class="text-secondary">Pick up your vehicle or have it delivered, then hit the road in style</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-5 bg-light" style="background: #f4f7fc !important;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="text-center mb-5">
+                    <span class="badge px-4 py-2 mb-3" style="background: #0a2b4f; color: #e9dec5; border-radius: 40px;">
+                        <i class="bi bi-question-circle me-2"></i>FAQ
+                    </span>
+                    <h2 class="display-5 fw-bold" style="color: #0a2b4f;">Frequently Asked Questions</h2>
+                </div>
+                
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item border-0 mb-3 shadow-sm" style="border-radius: 20px; overflow: hidden;">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" 
+                                    style="color: #0a2b4f; background: white; border-radius: 20px;">
+                                <i class="bi bi-question-circle-fill me-2" style="color: #c9a23d;"></i>
+                                What documents do I need to rent a car?
+                            </button>
+                        </h3>
+                        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-secondary">
+                                You'll need a valid driver's license, passport or ID, and a credit card for the security deposit. International renters may need an international driving permit.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item border-0 mb-3 shadow-sm" style="border-radius: 20px; overflow: hidden;">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2"
+                                    style="color: #0a2b4f; background: white;">
+                                <i class="bi bi-question-circle-fill me-2" style="color: #c9a23d;"></i>
+                                Is there a minimum age requirement?
+                            </button>
+                        </h3>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-secondary">
+                                Yes, drivers must be at least 25 years old. Drivers aged 21-24 may be subject to a young driver surcharge.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item border-0 mb-3 shadow-sm" style="border-radius: 20px; overflow: hidden;">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3"
+                                    style="color: #0a2b4f; background: white;">
+                                <i class="bi bi-question-circle-fill me-2" style="color: #c9a23d;"></i>
+                                Can I cancel or modify my booking?
+                            </button>
+                        </h3>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-secondary">
+                                Yes, free cancellation is available up to 24 hours before pickup. Modifications are subject to availability.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5" style="background: linear-gradient(145deg, #0a2b4f, #1b4b64);">
+    <div class="container text-center text-white">
+        <h2 class="display-5 fw-bold mb-3">Ready to Experience Premium Service?</h2>
+        <p class="lead mb-4 opacity-75">Contact us today for personalized assistance or book your vehicle online.</p>
+        <div class="d-flex justify-content-center gap-4 flex-wrap">
+            <a href="{% url 'cars_list' %}" class="btn btn-primary btn-lg px-5 py-3 rounded-pill" 
+               style="background: #c9a23d; color: #0a2b4f; font-weight: 700;">
+                <i class="bi bi-car-front me-2"></i>Browse Fleet
+            </a>
+            <a href="{% url 'contact' %}" class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill" style="border-width: 2px;">
+                <i class="bi bi-envelope me-2"></i>Contact Us
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Custom CSS -->
+<style>
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+    }
+    
+    .service-card {
+        transition: all 0.3s ease;
+    }
+    
+    .service-card:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 30px 50px -20px rgba(10, 43, 79, 0.3) !important;
+    }
+    
+    .service-card:hover .service-icon-wrapper {
+        transform: scale(1.1) rotate(5deg);
+        transition: transform 0.3s ease;
+    }
+    
+    .service-number {
+        transition: all 0.3s ease;
+    }
+    
+    .service-card:hover .service-number {
+        color: rgba(201,162,61,0.3) !important;
+        transform: scale(1.1);
+    }
+    
+    .process-step:hover .rounded-circle {
+        transform: scale(1.1);
+        transition: transform 0.3s ease;
+        box-shadow: 0 20px 30px -10px rgba(201,162,61,0.3);
+    }
+    
+    .breadcrumb-item + .breadcrumb-item::before {
+        color: rgba(255,255,255,0.5);
+    }
+    
+    @media (max-width: 768px) {
+        .page-header {
+            padding: 60px 0 40px;
+        }
+        
+        .display-4 {
+            font-size: 2.2rem;
+        }
+    }
+</style>
+
+<!-- AOS Animation Script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50
+        });
+    });
+</script>
+{% endblock %}

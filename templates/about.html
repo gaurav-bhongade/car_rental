@@ -1,0 +1,480 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About PrestigeDrive{% endblock %}
+
+{% block content %}
+<!-- Page Header - Elegant and inspiring -->
+<section class="page-header position-relative overflow-hidden" style="background: linear-gradient(135deg, #0a2b4f 0%, #1b4b64 100%); padding: 80px 0 60px;">
+    <div class="position-absolute top-0 start-0 w-100 h-100 opacity-10">
+        <div class="position-absolute w-100 h-100" style="background: url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1920&q=80') center/cover; opacity: 0.1;"></div>
+        <div class="position-absolute" style="top: 20%; right: 10%; width: 300px; height: 300px; background: rgba(201,162,61,0.1); border-radius: 50%; filter: blur(80px); animation: float 15s infinite;"></div>
+        <div class="position-absolute" style="bottom: 10%; left: 5%; width: 250px; height: 250px; background: rgba(201,162,61,0.08); border-radius: 50%; filter: blur(70px); animation: float 20s infinite reverse;"></div>
+    </div>
+    
+    <div class="container position-relative z-1">
+        <div class="row align-items-center">
+            <div class="col-lg-8 mx-auto text-center text-white">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center mb-3">
+                        <li class="breadcrumb-item"><a href="{% url 'index' %}" class="text-white-50">Home</a></li>
+                        <li class="breadcrumb-item active text-white" aria-current="page">About Us</li>
+                    </ol>
+                </nav>
+                <h1 class="display-4 fw-bold mb-3" data-aos="fade-up">Driving Excellence Since 2015</h1>
+                <p class="lead mb-0 opacity-75" style="max-width: 700px; margin: 0 auto;" data-aos="fade-up" data-aos-delay="100">
+                    Discover the story behind PrestigeDrive – where luxury meets reliability
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Our Story Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6" data-aos="fade-right">
+                <span class="badge px-4 py-2 mb-3" style="background: #e9dec5; color: #0a2b4f; border-radius: 40px;">
+                    <i class="bi bi-bookmark-star-fill me-2" style="color: #c9a23d;"></i>OUR STORY
+                </span>
+                <h2 class="display-5 fw-bold mb-4" style="color: #0a2b4f;">A Journey of Excellence</h2>
+                <p class="lead text-secondary mb-4">Founded in 2015, PrestigeDrive began with a simple vision: to transform the car rental experience through unparalleled service and premium vehicles.</p>
+                
+                <div class="story-content">
+                    <p class="text-secondary mb-4">What started as a small fleet of luxury vehicles has grown into one of the most trusted names in premium car rentals. Our founder, <strong class="text-dark">Johnathan Mitchell</strong>, a former automotive executive, recognized a gap in the market for truly exceptional rental experiences.</p>
+                    
+                    <p class="text-secondary mb-4">Today, we serve thousands of satisfied customers across the country, maintaining the same commitment to quality, transparency, and customer satisfaction that defined our earliest days.</p>
+                </div>
+                
+                <!-- Founder Signature -->
+                <div class="d-flex align-items-center mt-4">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" 
+                         alt="Founder" 
+                         class="rounded-circle me-3" 
+                         style="width: 60px; height: 60px; object-fit: cover; border: 3px solid #c9a23d;">
+                    <div>
+                        <h6 class="fw-bold mb-1" style="color: #0a2b4f;">Johnathan Mitchell</h6>
+                        <p class="small text-secondary mb-0">Founder & CEO, PrestigeDrive</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="position-relative">
+                    <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?w=800&h=600&fit=crop" 
+                         alt="Luxury car collection" 
+                         class="img-fluid rounded-4 shadow-xxl" 
+                         style="border-radius: 40px; border: 4px solid #c9a23d;">
+                    
+                    <!-- Experience Badge -->
+                    <div class="position-absolute bottom-0 end-0 mb-4 me-4">
+                        <div class="bg-white p-4 rounded-4 shadow-lg text-center" style="min-width: 120px;">
+                            <div class="display-4 fw-bold" style="color: #c9a23d;">10</div>
+                            <div class="text-secondary small">Years of Excellence</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Statistics Section -->
+<section class="py-5" style="background: linear-gradient(135deg, #0a2b4f 0%, #1b4b64 100%);">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="100">
+                <div class="text-center text-white">
+                    <div class="display-3 fw-bold">10+</div>
+                    <div class="opacity-75">Years Experience</div>
+                </div>
+            </div>
+            <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="200">
+                <div class="text-center text-white">
+                    <div class="display-3 fw-bold">500+</div>
+                    <div class="opacity-75">Premium Cars</div>
+                </div>
+            </div>
+            <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="300">
+                <div class="text-center text-white">
+                    <div class="display-3 fw-bold">12k+</div>
+                    <div class="opacity-75">Happy Clients</div>
+                </div>
+            </div>
+            <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="400">
+                <div class="text-center text-white">
+                    <div class="display-3 fw-bold">4.9</div>
+                    <div class="opacity-75">Customer Rating</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mission & Vision Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-6" data-aos="fade-up">
+                <div class="card h-100 border-0 shadow-sm" style="border-radius: 40px; overflow: hidden;">
+                    <div class="card-body p-5">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="rounded-circle p-3 me-3" style="background: #e9dec5;">
+                                <i class="bi bi-bullseye fs-2" style="color: #c9a23d;"></i>
+                            </div>
+                            <h3 class="fw-bold mb-0" style="color: #0a2b4f;">Our Mission</h3>
+                        </div>
+                        <p class="lead text-secondary mb-4">"To provide the best car rental experience with affordable prices and excellent service."</p>
+                        <p class="text-secondary">We believe that luxury should be accessible. Every day, we work to make premium mobility available to everyone while maintaining the highest standards of quality and service.</p>
+                        
+                        <!-- Mission Points -->
+                        <div class="mt-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-check-circle-fill me-2" style="color: #c9a23d;"></i>
+                                <span>Exceptional customer service</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-check-circle-fill me-2" style="color: #c9a23d;"></i>
+                                <span>Premium vehicle selection</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-check-circle-fill me-2" style="color: #c9a23d;"></i>
+                                <span>Transparent pricing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100 border-0 shadow-sm" style="border-radius: 40px; overflow: hidden;">
+                    <div class="card-body p-5">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="rounded-circle p-3 me-3" style="background: #e9dec5;">
+                                <i class="bi bi-eye fs-2" style="color: #c9a23d;"></i>
+                            </div>
+                            <h3 class="fw-bold mb-0" style="color: #0a2b4f;">Our Vision</h3>
+                        </div>
+                        <p class="lead text-secondary mb-4">"To be the leading car rental company worldwide, known for innovation and excellence."</p>
+                        <p class="text-secondary">We aspire to set the global standard for premium car rentals, combining technology, sustainability, and unparalleled service to create the future of mobility.</p>
+                        
+                        <!-- Vision Points -->
+                        <div class="mt-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-check-circle-fill me-2" style="color: #c9a23d;"></i>
+                                <span>Global expansion</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-check-circle-fill me-2" style="color: #c9a23d;"></i>
+                                <span>Sustainable fleet</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-check-circle-fill me-2" style="color: #c9a23d;"></i>
+                                <span>Digital innovation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Core Values Section -->
+<section class="py-5 bg-light" style="background: #f4f7fc !important;">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="badge px-4 py-2 mb-3" style="background: #e9dec5; color: #0a2b4f; border-radius: 40px;">
+                <i class="bi bi-heart-fill me-2" style="color: #c9a23d;"></i>OUR VALUES
+            </span>
+            <h2 class="display-5 fw-bold" style="color: #0a2b4f;">What Drives Us Forward</h2>
+            <p class="lead text-secondary">The principles that guide every interaction and decision</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4" data-aos="fade-up">
+                <div class="card h-100 border-0 shadow-sm text-center p-4" style="border-radius: 40px;">
+                    <div class="rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center" 
+                         style="width: 100px; height: 100px; background: #e9dec5;">
+                        <i class="bi bi-shield-check fs-1" style="color: #c9a23d;"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3" style="color: #0a2b4f;">Trust & Integrity</h4>
+                    <p class="text-secondary">We build lasting relationships through honest, transparent business practices and unwavering reliability.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100 border-0 shadow-sm text-center p-4" style="border-radius: 40px;">
+                    <div class="rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center" 
+                         style="width: 100px; height: 100px; background: #e9dec5;">
+                        <i class="bi bi-star fs-1" style="color: #c9a23d;"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3" style="color: #0a2b4f;">Excellence</h4>
+                    <p class="text-secondary">We never compromise on quality, from our vehicles to our customer service, ensuring every experience is exceptional.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100 border-0 shadow-sm text-center p-4" style="border-radius: 40px;">
+                    <div class="rounded-circle mx-auto mb-4 d-flex align-items-center justify-content-center" 
+                         style="width: 100px; height: 100px; background: #e9dec5;">
+                        <i class="bi bi-people fs-1" style="color: #c9a23d;"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3" style="color: #0a2b4f;">Customer First</h4>
+                    <p class="text-secondary">Our clients' satisfaction drives everything we do. We listen, adapt, and constantly improve to serve them better.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Timeline Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="badge px-4 py-2 mb-3" style="background: #0a2b4f; color: #e9dec5; border-radius: 40px;">
+                <i class="bi bi-clock-history me-2" style="color: #c9a23d;"></i>OUR JOURNEY
+            </span>
+            <h2 class="display-5 fw-bold" style="color: #0a2b4f;">Milestones That Matter</h2>
+        </div>
+        
+        <div class="timeline position-relative">
+            <!-- Timeline Item 1 -->
+            <div class="row mb-5" data-aos="fade-right">
+                <div class="col-md-5 text-md-end">
+                    <span class="badge px-4 py-2 mb-2" style="background: #c9a23d; color: #0a2b4f;">2015</span>
+                    <h4 class="fw-bold" style="color: #0a2b4f;">The Beginning</h4>
+                    <p class="text-secondary">PrestigeDrive founded with just 5 luxury vehicles and a vision for excellence.</p>
+                </div>
+                <div class="col-md-2 text-center d-none d-md-block">
+                    <div class="timeline-dot mx-auto" style="width: 20px; height: 20px; background: #c9a23d; border-radius: 50%;"></div>
+                </div>
+                <div class="col-md-5"></div>
+            </div>
+            
+            <!-- Timeline Item 2 -->
+            <div class="row mb-5" data-aos="fade-left">
+                <div class="col-md-5"></div>
+                <div class="col-md-2 text-center d-none d-md-block">
+                    <div class="timeline-dot mx-auto" style="width: 20px; height: 20px; background: #c9a23d; border-radius: 50%;"></div>
+                </div>
+                <div class="col-md-5">
+                    <span class="badge px-4 py-2 mb-2" style="background: #c9a23d; color: #0a2b4f;">2018</span>
+                    <h4 class="fw-bold" style="color: #0a2b4f;">Expansion</h4>
+                    <p class="text-secondary">Grew fleet to 200+ vehicles and expanded to 5 major cities nationwide.</p>
+                </div>
+            </div>
+            
+            <!-- Timeline Item 3 -->
+            <div class="row mb-5" data-aos="fade-right">
+                <div class="col-md-5 text-md-end">
+                    <span class="badge px-4 py-2 mb-2" style="background: #c9a23d; color: #0a2b4f;">2021</span>
+                    <h4 class="fw-bold" style="color: #0a2b4f;">Innovation</h4>
+                    <p class="text-secondary">Launched our digital platform and mobile app for seamless booking experience.</p>
+                </div>
+                <div class="col-md-2 text-center d-none d-md-block">
+                    <div class="timeline-dot mx-auto" style="width: 20px; height: 20px; background: #c9a23d; border-radius: 50%;"></div>
+                </div>
+                <div class="col-md-5"></div>
+            </div>
+            
+            <!-- Timeline Item 4 -->
+            <div class="row" data-aos="fade-left">
+                <div class="col-md-5"></div>
+                <div class="col-md-2 text-center d-none d-md-block">
+                    <div class="timeline-dot mx-auto" style="width: 20px; height: 20px; background: #c9a23d; border-radius: 50%;"></div>
+                </div>
+                <div class="col-md-5">
+                    <span class="badge px-4 py-2 mb-2" style="background: #c9a23d; color: #0a2b4f;">2024</span>
+                    <h4 class="fw-bold" style="color: #0a2b4f;">Today</h4>
+                    <p class="text-secondary">500+ premium vehicles, 12,000+ happy customers, and still growing strong.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="py-5" style="background: linear-gradient(135deg, #0a2b4f 0%, #1b4b64 100%);">
+    <div class="container">
+        <div class="text-center text-white mb-5">
+            <span class="badge px-4 py-2 mb-3" style="background: #c9a23d; color: #0a2b4f; border-radius: 40px;">
+                <i class="bi bi-check-circle-fill me-2"></i>WHY CHOOSE US
+            </span>
+            <h2 class="display-5 fw-bold">The PrestigeDrive Difference</h2>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4" data-aos="fade-up">
+                <div class="d-flex text-white">
+                    <div class="flex-shrink-0">
+                        <div class="rounded-circle p-3" style="background: rgba(201,162,61,0.2);">
+                            <i class="bi bi-car-front fs-3" style="color: #c9a23d;"></i>
+                        </div>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <h5 class="fw-bold">Premium Fleet</h5>
+                        <p class="text-white-50">All vehicles are less than 2 years old and meticulously maintained.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="d-flex text-white">
+                    <div class="flex-shrink-0">
+                        <div class="rounded-circle p-3" style="background: rgba(201,162,61,0.2);">
+                            <i class="bi bi-headset fs-3" style="color: #c9a23d;"></i>
+                        </div>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <h5 class="fw-bold">24/7 Support</h5>
+                        <p class="text-white-50">Round-the-clock assistance, wherever your journey takes you.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="d-flex text-white">
+                    <div class="flex-shrink-0">
+                        <div class="rounded-circle p-3" style="background: rgba(201,162,61,0.2);">
+                            <i class="bi bi-shield-check fs-3" style="color: #c9a23d;"></i>
+                        </div>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <h5 class="fw-bold">Fully Insured</h5>
+                        <p class="text-white-50">Comprehensive coverage for complete peace of mind.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5 bg-white">
+    <div class="container text-center">
+        <h2 class="display-5 fw-bold mb-3" style="color: #0a2b4f;">Ready to Experience PrestigeDrive?</h2>
+        <p class="lead text-secondary mb-4">Join thousands of satisfied customers and discover the difference.</p>
+        <div class="d-flex justify-content-center gap-4 flex-wrap">
+            <a href="{% url 'cars_list' %}" class="btn btn-primary btn-lg px-5 py-3 rounded-pill" 
+               style="background: #c9a23d; color: #0a2b4f; font-weight: 700;">
+                <i class="bi bi-car-front me-2"></i>Browse Our Fleet
+            </a>
+            <a href="{% url 'contact' %}" class="btn btn-outline-primary btn-lg px-5 py-3 rounded-pill" 
+               style="border-color: #c9a23d; color: #0a2b4f; border-width: 2px;">
+                <i class="bi bi-envelope me-2"></i>Contact Us
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Custom CSS -->
+<style>
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+    }
+    
+    .page-header {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    /* Timeline styling */
+    .timeline {
+        position: relative;
+    }
+    
+    .timeline::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(to bottom, #c9a23d 0%, #c9a23d 100%);
+        display: none;
+    }
+    
+    @media (min-width: 768px) {
+        .timeline::before {
+            display: block;
+        }
+    }
+    
+    .timeline-dot {
+        position: relative;
+        z-index: 2;
+        box-shadow: 0 0 0 4px rgba(201,162,61,0.3);
+        transition: all 0.3s ease;
+    }
+    
+    .timeline-dot:hover {
+        transform: scale(1.2);
+        box-shadow: 0 0 0 6px rgba(201,162,61,0.2);
+    }
+    
+    /* Card hover effects */
+    .card {
+        transition: all 0.3s ease;
+    }
+    
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 30px 50px -20px rgba(10, 43, 79, 0.3) !important;
+    }
+    
+    .card:hover .rounded-circle {
+        transform: scale(1.1);
+        transition: transform 0.3s ease;
+    }
+    
+    /* Breadcrumb styling */
+    .breadcrumb-item + .breadcrumb-item::before {
+        color: rgba(255,255,255,0.5);
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .page-header {
+            padding: 60px 0 40px;
+        }
+        
+        .display-4 {
+            font-size: 2.2rem;
+        }
+        
+        .timeline .row {
+            margin-bottom: 2rem !important;
+        }
+    }
+    
+    /* Story content styling */
+    .story-content p {
+        line-height: 1.8;
+    }
+    
+    /* Hover effects for stats */
+    .display-3 {
+        transition: all 0.3s ease;
+    }
+    
+    .col-md-3:hover .display-3 {
+        transform: scale(1.1);
+        color: #c9a23d !important;
+    }
+</style>
+
+<!-- AOS Animation Script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50
+        });
+    });
+</script>
+{% endblock %}

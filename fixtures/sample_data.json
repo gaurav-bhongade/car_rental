@@ -1,0 +1,266 @@
+[
+  {
+    "model": "core.service",
+    "pk": 1,
+    "fields": {
+      "title": "Luxury Cars",
+      "description": "Experience the thrill of driving premium luxury vehicles with our extensive collection of high-end cars.",
+      "icon": "fas fa-crown",
+      "image": ""
+    }
+  },
+  {
+    "model": "core.service",
+    "pk": 2,
+    "fields": {
+      "title": "Business Travel",
+      "description": "Professional transportation solutions for business travelers with comfortable and reliable vehicles.",
+      "icon": "fas fa-briefcase",
+      "image": ""
+    }
+  },
+  {
+    "model": "core.service",
+    "pk": 3,
+    "fields": {
+      "title": "Airport Pickup",
+      "description": "Convenient airport pickup and drop-off services to make your travel hassle-free.",
+      "icon": "fas fa-plane",
+      "image": ""
+    }
+  },
+  {
+    "model": "core.service",
+    "pk": 4,
+    "fields": {
+      "title": "Wedding Rentals",
+      "description": "Make your special day unforgettable with our elegant wedding car rental services.",
+      "icon": "fas fa-heart",
+      "image": ""
+    }
+  },
+  {
+    "model": "core.service",
+    "pk": 5,
+    "fields": {
+      "title": "Long Term Rentals",
+      "description": "Flexible long-term rental options with competitive rates for extended periods.",
+      "icon": "fas fa-calendar-alt",
+      "image": ""
+    }
+  },
+  {
+    "model": "core.service",
+    "pk": 6,
+    "fields": {
+      "title": "24/7 Support",
+      "description": "Round-the-clock customer support to assist you whenever you need help.",
+      "icon": "fas fa-headset",
+      "image": ""
+    }
+  },
+  {
+    "model": "cars.car",
+    "pk": 1,
+    "fields": {
+      "name": "Camry",
+      "brand": "Toyota",
+      "price_per_day": 45,
+      "fuel_type": "hybrid",
+      "transmission": "automatic",
+      "seats": 5,
+      "image": "",
+      "description": "Comfortable and fuel-efficient sedan perfect for city driving and long trips.",
+      "availability": true
+    }
+  },
+  {
+    "model": "cars.car",
+    "pk": 2,
+    "fields": {
+      "name": "Model 3",
+      "brand": "Tesla",
+      "price_per_day": 85,
+      "fuel_type": "electric",
+      "transmission": "automatic",
+      "seats": 5,
+      "image": "",
+      "description": "Cutting-edge electric vehicle with autopilot features and zero emissions.",
+      "availability": true
+    }
+  },
+  {
+    "model": "cars.car",
+    "pk": 3,
+    "fields": {
+      "name": "X5",
+      "brand": "BMW",
+      "price_per_day": 95,
+      "fuel_type": "diesel",
+      "transmission": "automatic",
+      "seats": 5,
+      "image": "",
+      "description": "Luxury SUV with powerful performance and premium interior features.",
+      "availability": true
+    }
+  },
+  {
+    "model": "cars.car",
+    "pk": 4,
+    "fields": {
+      "name": "Civic",
+      "brand": "Honda",
+      "price_per_day": 35,
+      "fuel_type": "petrol",
+      "transmission": "manual",
+      "seats": 5,
+      "image": "",
+      "description": "Reliable and economical compact car ideal for daily commuting.",
+      "availability": true
+    }
+  },
+  {
+    "model": "cars.car",
+    "pk": 5,
+    "fields": {
+      "name": "Mustang",
+      "brand": "Ford",
+      "price_per_day": 75,
+      "fuel_type": "petrol",
+      "transmission": "automatic",
+      "seats": 4,
+      "image": "",
+      "description": "Iconic sports car with roaring engine and thrilling driving experience.",
+      "availability": true
+    }
+  },
+  {
+    "model": "cars.car",
+    "pk": 6,
+    "fields": {
+      "name": "Sprinter",
+      "brand": "Mercedes-Benz",
+      "price_per_day": 120,
+      "fuel_type": "diesel",
+      "transmission": "automatic",
+      "seats": 12,
+      "image": "",
+      "description": "Spacious van perfect for group travel, family trips, or business transportation.",
+      "availability": true
+    }
+  },
+  {
+    "model": "team.teammember",
+    "pk": 1,
+    "fields": {
+      "name": "John Smith",
+      "designation": "CEO & Founder",
+      "image": "",
+      "social_links": {
+        "linkedin": "https://linkedin.com/in/johnsmith",
+        "twitter": "https://twitter.com/johnsmith"
+      }
+    }
+  },
+  {
+    "model": "team.teammember",
+    "pk": 2,
+    "fields": {
+      "name": "Sarah Johnson",
+      "designation": "Operations Manager",
+      "image": "",
+      "social_links": {
+        "linkedin": "https://linkedin.com/in/sarahjohnson",
+        "facebook": "https://facebook.com/sarahjohnson"
+      }
+    }
+  },
+  {
+    "model": "team.teammember",
+    "pk": 3,
+    "fields": {
+      "name": "Mike Davis",
+      "designation": "Fleet Manager",
+      "image": "",
+      "social_links": {
+        "linkedin": "https://linkedin.com/in/mikedavis"
+      }
+    }
+  },
+  {
+    "model": "team.teammember",
+    "pk": 4,
+    "fields": {
+      "name": "Emily Chen",
+      "designation": "Customer Service Lead",
+      "image": "",
+      "social_links": {
+        "twitter": "https://twitter.com/emilychen",
+        "instagram": "https://instagram.com/emilychen"
+      }
+    }
+  },
+  {
+    "model": "testimonials.testimonial",
+    "pk": 1,
+    "fields": {
+      "name": "Robert Wilson",
+      "review": "Excellent service! The car was in perfect condition and the booking process was seamless. Highly recommend for anyone needing a rental car.",
+      "rating": 5,
+      "image": ""
+    }
+  },
+  {
+    "model": "testimonials.testimonial",
+    "pk": 2,
+    "fields": {
+      "name": "Lisa Anderson",
+      "review": "Great experience with Car Rental. The staff was friendly and helpful. The Tesla I rented was amazing - so smooth and quiet!",
+      "rating": 5,
+      "image": ""
+    }
+  },
+  {
+    "model": "testimonials.testimonial",
+    "pk": 3,
+    "fields": {
+      "name": "David Brown",
+      "review": "Affordable prices and excellent customer service. Will definitely use again for my business trips.",
+      "rating": 4,
+      "image": ""
+    }
+  },
+  {
+    "model": "blog.blogpost",
+    "pk": 1,
+    "fields": {
+      "title": "Top 10 Tips for Safe Driving",
+      "slug": "top-10-tips-safe-driving",
+      "content": "Driving safely is crucial for everyone on the road. Here are our top 10 tips for safe driving:\n\n1. Always wear your seatbelt\n2. Avoid distractions like texting\n3. Maintain safe following distance\n4. Check your mirrors regularly\n5. Obey speed limits\n6. Never drive under the influence\n7. Keep your vehicle maintained\n8. Be aware of weather conditions\n9. Use signals when turning\n10. Stay alert and focused\n\nFollowing these tips will help ensure your safety and the safety of others on the road.",
+      "image": "",
+      "created_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "blog.blogpost",
+    "pk": 2,
+    "fields": {
+      "title": "Electric Cars: The Future of Rental",
+      "slug": "electric-cars-future-rental",
+      "content": "Electric vehicles are revolutionizing the car rental industry. With their quiet operation, zero emissions, and advanced technology, EVs are becoming increasingly popular for rental customers.\n\nBenefits of renting electric cars:\n\n- Environmentally friendly\n- Lower operating costs\n- Advanced safety features\n- Smooth and quiet ride\n- Government incentives\n\nAs more manufacturers produce electric vehicles, we expect to see a significant increase in EV options for our customers.",
+      "image": "",
+      "created_at": "2024-01-20T10:00:00Z"
+    }
+  },
+  {
+    "model": "blog.blogpost",
+    "pk": 3,
+    "fields": {
+      "title": "Planning Your Road Trip: Essential Checklist",
+      "slug": "planning-road-trip-essential-checklist",
+      "content": "Planning a road trip can be exciting but requires careful preparation. Here's our essential checklist to ensure a smooth journey:\n\nVehicle Preparation:\n- Check tire pressure and tread\n- Ensure oil and fluids are topped up\n- Test brakes and lights\n- Pack emergency kit\n\nPersonal Items:\n- Valid driver's license\n- Maps or GPS device\n- Snacks and water\n- First aid kit\n- Entertainment for the trip\n\nRoute Planning:\n- Plan your route in advance\n- Check for road construction\n- Know fuel station locations\n- Have backup accommodation options\n\nSafety First:\n- Share your itinerary with someone\n- Keep emergency contacts handy\n- Drive during daylight when possible\n- Take regular breaks\n\nWith proper planning, your road trip will be enjoyable and stress-free!",
+      "image": "",
+      "created_at": "2024-01-25T10:00:00Z"
+    }
+  }
+]

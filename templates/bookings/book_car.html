@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block title %}Book {{ car.brand }} {{ car.name }}{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1 class="text-center mb-4">Book {{ car.brand }} {{ car.name }}</h1>
+            <div class="card">
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="customer_name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="customer_name" name="customer_name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="pickup_date" class="form-label">Pickup Date</label>
+                            <input type="date" class="form-control" id="pickup_date" name="pickup_date" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="return_date" class="form-label">Return Date</label>
+                            <input type="date" class="form-control" id="return_date" name="return_date" required>
+                        </div>
+                        <div class="mb-3">
+                            <p><strong>Price per day: ${{ car.price_per_day }}</strong></p>
+                            <p id="total-price">Total: $0</p>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Submit Booking</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const pickupDate = document.getElementById('pickup_date');
+    const returnDate = document.getElementById('return_date');
+    const totalPriceEl = document.getElementById('total-price');
+    const pricePerDay = {{ car.price_per_day }};
+
+    function calculateTotal() {
+        const pickup = new Date(pickupDate.value);
+        const returnD = new Date(returnDate.value);
+        if (pickup && returnD && returnD > pickup) {
+            const days = Math.ceil((returnD - pickup) / (1000 * 60 * 60 * 24));
+            totalPriceEl.textContent = `Total: $${days * pricePerDay}`;
+        } else {
+            totalPriceEl.textContent = 'Total: $0';
+        }
+    }
+
+    pickupDate.addEventListener('change', calculateTotal);
+    returnDate.addEventListener('change', calculateTotal);
+});
+</script>
+{% endblock %}

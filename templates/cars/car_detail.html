@@ -1,0 +1,198 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ car.brand }} {{ car.name }} - Car Details{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card shadow-lg mb-4">
+                {% if car.image %}
+                <img src="{{ car.image.url }}" class="card-img-top" alt="{{ car.name }}" style="height: 400px; object-fit: cover;">
+                {% else %}
+                <img src="https://images.unsplash.com/photo-1549399735-cef2e2c3f638?w=800&h=400&fit=crop" class="card-img-top" alt="Car">
+                {% endif %}
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h1 class="card-title display-5 fw-bold text-primary">{{ car.brand }} {{ car.name }}</h1>
+                            <p class="lead text-muted">{{ car.description }}</p>
+                        </div>
+                        <div class="col-md-4 text-end">
+                            <div class="h2 text-primary fw-bold">${{ car.price_per_day }}<small class="text-muted">/day</small></div>
+                            <div class="badge fs-6 {% if car.availability %}bg-success{% else %}bg-danger{% endif %} p-2">
+                                {% if car.availability %}Available{% else %}Not Available{% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Car Specifications -->
+            <div class="card shadow-lg mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="card-title mb-0"><i class="fas fa-info-circle me-2"></i>Specifications</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-gas-pump fa-2x text-primary me-3"></i>
+                                <div>
+                                    <h6 class="mb-0 fw-bold">Fuel Type</h6>
+                                    <p class="mb-0 text-muted">{{ car.fuel_type|title }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-cog fa-2x text-primary me-3"></i>
+                                <div>
+                                    <h6 class="mb-0 fw-bold">Transmission</h6>
+                                    <p class="mb-0 text-muted">{{ car.transmission|title }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-users fa-2x text-primary me-3"></i>
+                                <div>
+                                    <h6 class="mb-0 fw-bold">Seating Capacity</h6>
+                                    <p class="mb-0 text-muted">{{ car.seats }} passengers</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-car fa-2x text-primary me-3"></i>
+                                <div>
+                                    <h6 class="mb-0 fw-bold">Brand</h6>
+                                    <p class="mb-0 text-muted">{{ car.brand }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Features -->
+            <div class="card shadow-lg">
+                <div class="card-header bg-success text-white">
+                    <h3 class="card-title mb-0"><i class="fas fa-star me-2"></i>Key Features</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Air Conditioning</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Power Steering</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>ABS Brakes</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Central Locking</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Bluetooth Audio</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>GPS Navigation</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>USB Charging</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Well Maintained</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4">
+            <!-- Booking Card -->
+            <div class="card shadow-lg sticky-top" style="top: 20px;">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="card-title mb-0"><i class="fas fa-calendar-check me-2"></i>Book This Car</h4>
+                </div>
+                <div class="card-body">
+                    {% if car.availability %}
+                    <form method="post" action="{% url 'book_car' car.id %}">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Pickup Date</label>
+                            <input type="date" name="pickup_date" class="form-control" required min="{% now 'Y-m-d' %}">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Return Date</label>
+                            <input type="date" name="return_date" class="form-control" required min="{% now 'Y-m-d' %}">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Your Name</label>
+                            <input type="text" name="customer_name" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Email</label>
+                            <input type="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Phone</label>
+                            <input type="tel" name="phone" class="form-control" required>
+                        </div>
+                        <div class="alert alert-info">
+                            <strong>Total Cost: $<span id="total-cost">0</span></strong>
+                            <br><small>Calculated based on rental days</small>
+                        </div>
+                        <button type="submit" class="btn btn-success w-100 btn-lg">
+                            <i class="fas fa-check me-2"></i>Confirm Booking
+                        </button>
+                    </form>
+                    {% else %}
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        This car is currently not available for booking.
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            
+            <!-- Contact Info -->
+            <div class="card shadow-lg mt-4">
+                <div class="card-header bg-info text-white">
+                    <h5 class="card-title mb-0"><i class="fas fa-phone me-2"></i>Need Help?</h5>
+                </div>
+                <div class="card-body">
+                    <p class="mb-2"><i class="fas fa-phone me-2"></i> +1 (555) 123-4567</p>
+                    <p class="mb-2"><i class="fas fa-envelope me-2"></i> support@carrental.com</p>
+                    <p class="mb-0"><i class="fas fa-clock me-2"></i> 24/7 Support Available</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Back to Cars -->
+    <div class="text-center mt-5">
+        <a href="{% url 'cars_list' %}" class="btn btn-outline-primary btn-lg">
+            <i class="fas fa-arrow-left me-2"></i>Back to All Cars
+        </a>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const pickupDate = document.querySelector('input[name="pickup_date"]');
+    const returnDate = document.querySelector('input[name="return_date"]');
+    const totalCost = document.getElementById('total-cost');
+    const pricePerDay = {{ car.price_per_day }};
+
+    function calculateCost() {
+        const pickup = new Date(pickupDate.value);
+        const returnD = new Date(returnDate.value);
+        
+        if (pickup && returnD && returnD > pickup) {
+            const days = Math.ceil((returnD - pickup) / (1000 * 60 * 60 * 24));
+            totalCost.textContent = (days * pricePerDay).toFixed(2);
+        } else {
+            totalCost.textContent = '0';
+        }
+    }
+
+    pickupDate.addEventListener('change', calculateCost);
+    returnDate.addEventListener('change', calculateCost);
+});
+</script>
+{% endblock %}
